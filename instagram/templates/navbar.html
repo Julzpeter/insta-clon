@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="navbar-nav mr-auto">
+        <div class="col-sm-4 col-md-4 col-xs-2">
+
+            <a href="/"><span class="fa fa-instagram fa-2x" aria-hidden="true">Instagram</a>
+        </div>
+    </ul>
+    <div class="col-sm-4 col-md-4 col-xs-8">
+
+        &nbsp;
+        <form class="navbar-form form-search" role="search" action="{% url 'get_search' %}">
+            <div class="input-group">
+                <input type="text" style="border:1px solid grey" class="form-control" placeholder="Search" name="user">
+                <div class="input-group-btn">
+                    <button style="background-color: white;" type="submit"><i style="color:blue"
+                            class="fa fa-search fa-2x"></i></button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <div class="col-sm-4 col-md-4 col-xs-2">
+        {% if user.is_authenticated %}
+        <a href="{% url 'profile' user.id %}"><i class="fa fa-user fa-2x" style="float:right; margin-left: 20px;"
+                aria-hidden="true"></i></a>
+        &nbsp;
+        <a href="{% url 'post_image' user.id %}"><i class="fa fa-plus-square-o fa-2x"
+                style="float:right; margin-left: 20px;" aria-hidden="true"></i></a>
+        &nbsp;
+        <a href="/logout"><i class="fa fa-cog fa-2x " style="float:right; margin-left: 20px;"></i></a>
+        {% endif %}
+    </div>
+</nav>
+<br>
+<br>
+<br>
