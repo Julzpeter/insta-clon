@@ -1,1 +1,32 @@
-<h1> SEARCH </h1>
+{%extends 'base.html'%}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1 col-md-2 col-xs-1"></div>
+        <div class="col-sm-8 col-md-8 col-xs-1 shadow p-3 mb-5 bg-white rounded">
+
+            {% if users%}
+            <h2>Found {{ users|length }} of searched user {{message}}</h2>
+            {% else %}
+            <h2> Found 0 users for the search user {{message}}</h2>
+            {% endif %}
+        </div>
+        <div class="col-sm-1 col-md-2 col-xs-1"></div>
+    </div>
+
+
+    {% for user in users %}
+    <div class="row">
+        <div class="col-sm-1 col-md-2 col-xs-1"></div>
+        <div class="col-sm-8 col-md-8 col-xs-1 shadow p-3 mb-5 bg-white rounded">
+
+            <a style="text-decoration-line: none;" href="{% url 'profile' user.id %}"><img
+                    style="border-radius:50px;width:50px;height:50px;" class="rounded-circle"
+                    src="{{ user.profile.profile_path.url  }}"> &nbsp;<b>{{user.username }}</b></a>
+
+        </div>
+        <div class="col-sm-1 col-md-2 col-xs-1"></div>
+    </div>
+    {% endfor %}
+    {% endblock %}
+</div>

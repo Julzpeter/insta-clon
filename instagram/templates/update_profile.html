@@ -1,1 +1,27 @@
-<H1> UPDATE PROFILE</H1>
+{%extends 'base.html'%}
+{% load bootstrap3 %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2 col-md-4 "></div>
+        <div class="col-sm-8 col-md-4 col-sm-4; shadow p-3 mb-5 bg-white rounded">
+            <h3 style="font-style: italic; font-weight: bold; font-size: 25px;" class="text-center">Edit Profile
+            </h3>
+            <hr>
+            <br>
+            <br>
+
+            <form action="{%url 'update-profile' user.id%}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% bootstrap_form form%}
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-2 col-md-4"></div>
+    </div>
+</div>
+{% endblock %}
