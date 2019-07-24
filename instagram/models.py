@@ -100,3 +100,13 @@ class Followers(models.Model):
     Follower = models.CharField(max_length=40, default='')
 
 
+class Likes(models.Model):
+    post = models.ForeignKey('Image')
+    user = models.ForeignKey(User)
+
+    class Meta:
+        unique_together = ("post", "user")
+
+    def __str__(self):
+        return 'Like: ' + self.user.username + ' ' + self.post.title
+    
