@@ -1,1 +1,60 @@
-<h1>HELLO USER</h1>
+{%extends 'base.html'%}
+{% load bootstrap3 %}
+{% block content %}
+{{ block.super}}
+
+<div class="container">
+
+    {%for image in images %}
+    <div class="row">
+        <div class="col-sm-2 col-md-2 col-xs-1"></div>
+
+        <div class="col-sm-8 col-md-8 col-xs-10">
+            <div class="card-group">
+
+                <div class="card">
+
+                    <div style="background-color:white;" class=" card-header">
+                        <img style="border-radius:30px;width:30px;height:30px; background-color:white;"
+                            class="rounded-circle" src="{{image.user_profile.profile_path.url }}">
+                        &nbsp;{{ image.editor }}
+
+                    </div>
+                    <img class="card-img-top" style="height: 500px !important" src="{{image.image.url}}" alt="">
+                    {% if request.user.is_authenticated %}
+                    <div class="card-body">
+                        <p><b style="text-transform: lowercase;">{{ image.user.username}}</b>&nbsp;{{image.caption}}</p>
+                        {% for comment in image.comment_set.all %}
+
+                        <p><img style="border-radius:30px;width:30px;height:30px;" class="rounded-circle"
+                                src="{{comment.user.profile.profile_path.url }}">&nbsp;<b
+                                style="text-transform: lowercase;">{{ comment.user.username}}</b>&nbsp;{{comment.comment}}
+                        </p>
+
+                        {% endfor %}
+                    </div>
+                    <div style="background-color:white;" class="card-footer">
+                        <form action="post/comment/{{image.id}}" method="post" enctype="multipart/form-data"
+                            class="form" placeholder="Add Comment">
+                            {% csrf_token %}
+                            {% bootstrap_form form %}
+                            <button class="btn btn-primary" type="submit">Post</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="col-sm-2 col-md-2 col-xs-1"></div>
+        {% endif %}
+        <br>
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+    <br>
+    {% endfor %}
+    <br>
+</div>
+{% endblock %}
