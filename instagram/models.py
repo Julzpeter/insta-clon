@@ -95,3 +95,8 @@ class Comment(models.Model):
         return self.comment
 
 
+class Followers(models.Model):
+    user = models.CharField(max_length=40, default='')
+    Follower = models.CharField(max_length=40, default='')
+
+
