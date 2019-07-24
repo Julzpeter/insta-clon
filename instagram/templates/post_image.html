@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+{% load staticfiles %}
+{% load bootstrap3 %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>New Post</title>
+    {{form.media}}
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 col-md-2 col-xs-1"></div>
+            <div class="col-sm-8 col-md-8 col-xs-10">
+                <div class="card-body shadow p-3 mb-5 bg-white rounded">
+                    <h3 style="font-style: italic; font-weight: bold; font-size: 25px;" class="text-center">New Post
+                    </h3>
+                    <hr>
+                    <br>
+                    <br>
+                    <form action="{%url 'post_image' user.id%}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% bootstrap_form form %}
+                        <div class="form-group">
+                            <button class="btn btn-primary" type="submit">Share</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-2 col-md-2 col-xs-1"></div>
+            </div>
+
+        </div>
+    </div>
+
+    {%endblock%}
+</body>
