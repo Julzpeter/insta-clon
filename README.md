@@ -1,14 +1,14 @@
-# Gallery
+# Instaclone
 
 ## Description
-Gallery is a website dedicated to sharing photography
+Instagram is a website that allows users to share photos and videos from their lives, add captions and engage with others.
 
 ## Author
 Juliet Koech
 
 
 ## Date made
-20/07/2019
+25/07/2019
 
 ## Features
 As a user of the application you will be able to:
