@@ -2,6 +2,21 @@
 {% load bootstrap3 %}
 
 {% block content %}
+<style>
+    .addpost {
+        border-radius: 6px;
+    }
+
+    .light {
+        border-radius: 6px;
+
+    }
+
+    .follow {
+        border-radius: 6px;
+
+    }
+</style>
 
 <div class="container">
     <div class="row">
@@ -18,8 +33,8 @@
 
             <div class="media-body">
                 <h2 class="account-heading">{{ user.username }}</h2>
-                <a class="btn btn-outline-info" href="/update/profile/{{user.id}}">Edit Profile</a>
-                <p class="btn btn-primary "> <a style="text-decoration:none;color:white" href="#"> Follow </a></p>
+                <a class="btn btn-light" href="/update/profile/{{user.id}}">Edit Profile</a>
+                <p class="btn btn-primary follow"> <a style="text-decoration:none;color:white" href="#"> Follow </a></p>
 
 
                 <br>
@@ -37,7 +52,7 @@
 <hr>
 <div class="container">
     <div class="row">
-        <a class="btn btn-primary " href="{% url 'post_image' user.id %}">Add Post</a>
+        <a class="btn btn-primary addpost " href="{% url 'post_image' user.id %}">Add Post</a>
 
 
         {% for image in images %}
@@ -53,9 +68,9 @@
                 </div>
             </div>
         </div>
-
-
     </div>
+
+</div>
 
 </div>
 

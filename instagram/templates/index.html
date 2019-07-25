@@ -2,6 +2,11 @@
 {% load bootstrap3 %}
 {% block content %}
 {{ block.super}}
+<style>
+    .post{
+        border-radius:6px;
+    }
+</style>
 
 <div class="container">
 
@@ -28,21 +33,20 @@
 
                         <p><img style="border-radius:30px;width:30px;height:30px;" class="rounded-circle"
                                 src="{{comment.user.profile.profile_path.url }}">&nbsp;<b
-                                style="text-transform: lowercase;">{{ comment.user.username}}</b>&nbsp;{{comment.comment}}
+                                style="text-transform: lowercase;">@{{ comment.user.username}}</b>&nbsp;{{comment.comment}}
                         </p>
 
 
                         {% endfor %}
                     </div>
                     <div style="background-color:white;" class="card-footer">
-                        <form action="post/comment/{{image.id}}" method="post" enctype="multipart/form-data"
-                            class="form" placeholder="Add Comment">
-                            {% csrf_token %}
+                            <form action="post/comment/{{image.id}}" method="post" enctype="multipart/form-data"
+                                class="form" placeholder="Add Comment">
+                                {% csrf_token %}
 
-                            {% bootstrap_form form %}
-
-                            <button class="btn btn-primary" type="submit">Post</button>
-                        </form>
+                                {% bootstrap_form form %}
+                                <button class="btn btn-primary post" type="submit">Post</button>
+                            </form>
                     </div>
                 </div>
             </div>
