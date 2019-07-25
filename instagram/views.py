@@ -103,3 +103,6 @@ def post_comment(request, image_id):
 def signout(request):
     logout(request)
     return redirect('login')
+
+
+

@@ -31,13 +31,16 @@
                                 style="text-transform: lowercase;">{{ comment.user.username}}</b>&nbsp;{{comment.comment}}
                         </p>
 
+
                         {% endfor %}
                     </div>
                     <div style="background-color:white;" class="card-footer">
                         <form action="post/comment/{{image.id}}" method="post" enctype="multipart/form-data"
                             class="form" placeholder="Add Comment">
                             {% csrf_token %}
+
                             {% bootstrap_form form %}
+
                             <button class="btn btn-primary" type="submit">Post</button>
                         </form>
                     </div>

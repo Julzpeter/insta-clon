@@ -2,3 +2,7 @@
     background-color: blue;
     padding-top: 20px;
 }
+
+.btn-default{
+    border-radius:2px;
+}

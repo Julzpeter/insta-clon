@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^update/profile/(\d+)$', views.update_profile, name='update-profile'),
     url(r'^post/image/(\d+)$', views.post_image, name='post_image'),
     url(r'^post/comment/(\d+)$', views.post_comment, name='post_comment'),
+    
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
