@@ -20,7 +20,7 @@
                         &nbsp;{{ image.editor }}
 
                     </div>
-                    <img class="card-img-top" style="height: 500px !important" src="{{image.image.url}}" alt="">
+                    <img class="card-img-top" style="height: 400px !important" src="{{image.image.url}}" alt="">
                     {% if request.user.is_authenticated %}
                     <div class="card-body">
                         <p><b style="text-transform: lowercase;">{{ image.user.username}}</b>&nbsp;{{image.caption}}</p>

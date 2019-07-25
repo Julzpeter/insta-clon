@@ -43,10 +43,21 @@
 
             </div>
         </div>
-        {%endfor%}
-
-
-
-
+        {% if request.user == user %}
+        
+        {% endif %}
     </div>
-    {% endblock %}
+    {% endfor %}
+    {% if request.user == user %}
+    <a href="{% url 'post_image' user.id %}">
+        <span style="margin:13px;font-size: 50px;border:1px solid rgb(230, 226, 226);padding:75px ;color:black"
+            class="glyphicon glyphicon-plus"></span>
+    </a>
+    {% endif %}
+
+
+
+
+
+</div>
+{% endblock %}
