@@ -6,3 +6,20 @@
 .btn-default{
     border-radius:2px;
 }
+.rounded-circle {
+    height: 50px;
+    width: 50px;
+}
+
+.col-sm-4 col-md-4 col-xs-4 {
+    margin-top: 100px;
+}
+
+.h3 {
+    font-family: 'Lobster',
+        cursive;
+}
+
+.card-header {
+    margin-top: 5px;
+}
