@@ -1,28 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- <!-- <nav class="navbar navbar-dark default-color">
     <ul class="navbar-nav mr-auto">
         <div class="col-sm-4 col-md-4 col-xs-2">
             <ul class="nav navbar-nav navbar-left">
-                <li> <a style="font-size:30px;color:black" class="glyphicon glyphicon-camera " href="/">
+                 <li> <a style="font-size:30px;color:black" class="glyphicon glyphicon-camera " href="/">
                         <span class="ig"> Instagram</span> </a></li>
             </ul>
-            <!-- <a href="/"><span class="fa fa-instagram fa-2x" aria-hidden="true">Instagram</a> -->
-        </div>
+            <!-- <a href="/"><span class="fa fa-instagram fa-2x" aria-hidden="true">Instagram</a>
+        </div> 
     </ul>
     <div class="col-sm-4 col-md-4 col-xs-8">
 
         &nbsp;
         <form class="navbar-form form-search" role="search" action="{% url 'get_search' %}">
             <div class="input-group">
-                <input type="text" style="border:1px solid grey" class="form-control" placeholder="Search" name="user">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" name="user">
                 <div class="input-group-btn">
-                    <!-- <button class="btn btn-default" style="border-radius:2px" ;type="submit">SEARCH</button> -->
+                    <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
                 </div>
             </div>
         </form>
 
-    </div>
+    </div> -->
 
-    <div class="col-sm-4 col-md-4 col-xs-2">
+    <!-- <div class="col-sm-4 col-md-4 col-xs-2">
         {% if user.is_authenticated %}
         <a href="{% url 'profile' user.id %}"><i class="fa fa-user fa-2x" style="float:right; margin-left: 20px;"
                 aria-hidden="true"></i></a>
@@ -33,7 +33,53 @@
         <a href="/logout"><i class="fa fa-cog fa-2x " style="float:right; margin-left: 20px;"></i>LOGOUT</a>
         {% endif %}
     </div>
+</nav> -->
+<style>
+    .insta{
+        font-family: 'Pacifico', cursive;
+        font-size:20px;
+        
+    }
+</style>
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand insta" href="/">Instagram</a></a>
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search for users" name="user">
+            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+        </form>
+
+        <li class="nav-item dropdown pl-3">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-default"
+                aria-labelledby="navbarDropdownMenuLink-333">
+                {% if user.is_authenticated %}
+                <a class="dropdown-item" href="{% url 'profile' user.id %}">Profile</a>
+                {% endif %}
+                <!-- <a class="dropdown-item" href="">Login</a> -->
+                
+                <a class="dropdown-item" href="/logout">Logout </a>
+
+            </div>
+        </li>
+    </ul>
 </nav>
 <br>
 <br>
 <br>
+
+
+
+<!-- 
+<form class="form-inline">
+    <div class="md-form my-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" name="user">
+    </div>
+    <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+</form>
+</nav>
+<input type="text" style="border:1px solid grey" class="form-control" placeholder="Search" name="user"> -->
