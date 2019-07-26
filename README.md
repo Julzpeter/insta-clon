@@ -13,14 +13,14 @@ Juliet Koech
 ## Features
 As a user of the application you will be able to:
 
-* View different photos that interest you 
-* Click on a single photo to expand it and also view the details of the photo. The photo details will appear on a modal within the same route as the main page.
-* Search for diffrent categories of photos (i.e Travel,Sports)
-* View photos based on the location they were taken and category
+* Sign in to the application to start using
+* Upload pictures to the application 
+* View different photos that interest you
+* See my profile with all my pictures
 
 ##  Installing
 * You require a minimum python version 3.6 to run the application
-* Clone this repo: git clone https://github.com/Julzpeter/Gallery.git
+* Clone this repo: git clone https://github.com/Julzpeter/insta-clon.git
 * The repo comes in a zipped or compressed format. Extract to your prefered location and open it.
 * To run the app, you'll have to run the following commands in your terminal pip install -r requirements.txt
 *On your terminal,Create database gallery using the command below. CREATE DATABASE gallery;
