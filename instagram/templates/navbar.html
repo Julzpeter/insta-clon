@@ -44,6 +44,14 @@
         height: 20px;
         width: 30px;
     }
+    .profile{
+        font-family: 'Pacifico', cursive;
+        font-size: 20px;
+    }
+    .logout{
+        font-family: 'Pacifico', cursive;
+        font-size: 20px;
+    }
 </style>
 <nav class="navbar navbar-light bg-light justify-content-between">
     <i class="fab fa-instagram logo"></i>
@@ -63,11 +71,11 @@
             <div class="dropdown-menu dropdown-menu-right dropdown-default"
                 aria-labelledby="navbarDropdownMenuLink-333">
                 {% if user.is_authenticated %}
-                <a class="dropdown-item" href="{% url 'profile' user.id %}">Profile</a>
+                <a class="dropdown-item profile" href="{% url 'profile' user.id %}">Profile</a>
                 {% endif %}
                 <!-- <a class="dropdown-item" href="">Login</a> -->
 
-                <a class="dropdown-item" href="/logout">Logout </a>
+                <a class="dropdown-item logout" href="/logout">Logout </a>
 
             </div>
         </li>
