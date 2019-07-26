@@ -1,7 +1,7 @@
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Image, Profile, Comment,Like
+from .models import Image, Profile, Comment,Likes
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from .forms import ProfileForm, ImageForm, CommentForm
@@ -14,7 +14,7 @@ def home(request):
     users = User.objects.all()
     current = request.user
     comments = Comment.objects.all().order_by('-posted')
-    likes = Like.objects.all().count()
+    likes = Likes.objects.all().count()
    
     return render(request, 'index.html', {"images": images, "users": users, 'user': current, "form": form, 'comments': comments})
 
@@ -91,6 +91,15 @@ def post_comment(request, image_id):
     comments = Comment.objects.filter(post_id=image_id)
     current_user = request.user
     current_image = Image.objects.get(id=image_id)
+    try:
+        likes = Likes.object.filter(image_id).count()
+    except ObjectDoesNotExist:
+        likes = 0
+    try:
+        like = Likes.objects.filter(
+            image_id=image_id).get(user_id=request.user)
+    except ObjectDoesNotExist:
+        like = 0
     if request.method == 'POST':
         form = CommentForm(request.POST, request.FILES)
         if form.is_valid():
@@ -99,7 +108,14 @@ def post_comment(request, image_id):
             comment.user = current_user
             comment.save()
             print(comments)
-    return redirect(home)
+            return redirect(home)
+    else:
+        form = CommentForm()
+
+    return render(request, 'comments.html', {"form": form, 'comments': comments, "image": current_image, "user": current_user, 'like': like, "likes": likes})
+   
+
+
 
 
 def signout(request):
