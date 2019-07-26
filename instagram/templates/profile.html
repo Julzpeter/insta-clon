@@ -52,22 +52,22 @@
 <hr>
 <div class="container">
     <div class="row">
-        <a class="btn btn-primary addpost " href="{% url 'post_image' user.id %}">Add Post</a>
+        <div class="col-md-12 text-center">
+            <a class="btn btn-primary addpost " href="{% url 'post_image' user.id %}">Add Post</a>
 
+        </div>
+        
 
         {% for image in images %}
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div style="height: 104.67%; width:104.67%;" class="card">
-                        <img src="{{image.image.url}}" class="img-thumbnail" style="height: 240px !important"
-                            data-toggle="modal" data-target="#myModal{{image.id}}" alt="" />
-                    </div>
-
-                </div>
+        <div class="col-md-4 col-lg-4">
+            <div style="height: 104.67%; width:104.67%;" class="card">
+                <img src="{{image.image.url}}" class="img-thumbnail" style="height: 240px !important"
+                    data-toggle="modal" data-target="#myModal{{image.id}}" alt="" />
             </div>
         </div>
+        {% endfor %}
+     
     </div>
 
 </div>
@@ -78,7 +78,7 @@
 
 {% endif %} -->
 
-{% endfor %}
+
 {% if request.user == user %}
 
 {% endif %}
