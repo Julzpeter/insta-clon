@@ -10,13 +10,19 @@ Juliet Koech
 ## Date made
 25/07/2019
 
-## Features
+## User Stories
 As a user of the application you will be able to:
 
 * Sign in to the application to start using
 * Upload pictures to the application 
 * View different photos that interest you
 * See my profile with all my pictures
+* Follow other users and see their pictures on my timeline
+* Like a picture and leave a comment on it
+
+
+## Behavior Driven Development
+
 
 ##  Installing
 * You require a minimum python version 3.6 to run the application
