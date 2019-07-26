@@ -22,6 +22,11 @@ As a user of the application you will be able to:
 
 
 ## Behavior Driven Development
+| Behavior              | Input                                                                  | Output                         |
+|-----------------------|------------------------------------------------------------------------|--------------------------------|
+| Post an image         | Click on add button                                                    | Adds the post of the user      |
+| Comment on the image  | Comment on the comment form.Add your comment. Click on the post button | Comment is added and displayed |  
+| Follow other users    | Click on the follow button                                             | User is added to your timeline | 
 
 
 ##  Installing
