@@ -51,6 +51,15 @@ python3.7 manage.py test user
 * python3.7 -m venv --without-pip virtual
 * source virtual/bin/activate
 
+## downloading the latest version of pip
+Myinstagram heavily relies on pip to install Django and any other packages that we will need.
+
+(virtual)$ curl https://bootstrap.pypa.io/get-pip.py | python
+
+## Install Django
+We need to install the latst django release of version 1.11
+(virtual)$ pip install django==1.11
+
 
 ## Technologies used
 * Django - web framework used
