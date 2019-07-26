@@ -113,6 +113,13 @@ def post_comment(request, image_id):
         form = CommentForm()
 
     return render(request, 'comments.html', {"form": form, 'comments': comments, "image": current_image, "user": current_user, 'like': like, "likes": likes})
+
+def like_pic(request,pic_id):
+    current_user = request.user
+    image = Image.objects.get(id=pic_id)
+    new_like = Likes(post=image, user=current_user)
+    new_like.save()
+    return redirect(home, image.id)
    
 
 
