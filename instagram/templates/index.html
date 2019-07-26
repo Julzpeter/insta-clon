@@ -40,6 +40,7 @@
                         {% endfor %}
                     </div>
                     <div style="background-color:white;" class="card-footer">
+                        
                             <form action="post/comment/{{image.id}}" method="post" enctype="multipart/form-data"
                                 class="form" placeholder="Add Comment">
                                 {% csrf_token %}

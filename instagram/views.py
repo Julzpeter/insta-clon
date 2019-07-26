@@ -1,7 +1,7 @@
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Image, Profile, Comment
+from .models import Image, Profile, Comment,Like
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from .forms import ProfileForm, ImageForm, CommentForm
@@ -14,6 +14,8 @@ def home(request):
     users = User.objects.all()
     current = request.user
     comments = Comment.objects.all().order_by('-posted')
+    likes = Like.objects.all().count()
+   
     return render(request, 'index.html', {"images": images, "users": users, 'user': current, "form": form, 'comments': comments})
 
 
