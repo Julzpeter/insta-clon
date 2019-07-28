@@ -40,26 +40,24 @@
         font-size: 20px;
 
     }
-    .logo{
-        height: 20px;
-        width: 30px;
-    }
-    .profile{
+
+    .profile {
         font-family: 'Pacifico', cursive;
         font-size: 20px;
     }
-    .logout{
+
+    .logout {
         font-family: 'Pacifico', cursive;
         font-size: 20px;
     }
 </style>
 <nav class="navbar navbar-light bg-light justify-content-between">
-    <i class="fab fa-instagram logo"></i>
+    <i class="fab fa-instagram   fa-3x pr-2"></i>
     <a class="navbar-brand insta" href="/">Instagram</a></a>
 
     <ul class="navbar-nav ml-auto nav-flex-icons">
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search for users" name="user">
+        <form class="form-inline" action="{% url 'get_search' %}">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search for users" name="user">
             <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
         </form>
 
